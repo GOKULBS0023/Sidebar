@@ -1,0 +1,139 @@
+*, 
+::after,
+::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%; /*1rem = 10px*/
+}
+body{
+    background-color: #eee;
+    font-family: 'Roboto', sans-serif;
+}
+li{
+    list-style: none;
+}
+a,
+a:active,
+a:link{
+    text-decoration: none;
+    color: inherit;
+}
+#main{
+    position: relative;
+}
+/* Toggle Button */
+.toggle{
+    position: fixed;
+    top: 3rem;
+    right: 5rem;
+    font-size: 2rem;
+    transition: all .2s;
+    cursor: pointer;
+    animation: zoom 2s ease-in-out infinite;
+    color: rgba(14, 44, 44, 0.825);
+}
+/* Sidebar */
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 0;
+    overflow: hidden;
+    height: 100vh;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    transition: all .3s;
+}
+.show-bar{
+    width: 35%;
+    padding: 2rem 4rem 2rem 2rem;
+}
+.sidebar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    height: 5rem;
+}
+.close-btn{
+    font-size: 2.4rem;
+    color: orangered;
+    cursor: pointer;
+    transition: all .4s;
+}
+.close-btn:hover{
+    transform: rotate(180deg);
+}
+/* Links */
+.links{
+    margin-top: 7vh;
+    padding: .5rem;
+}
+.links a{
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: #526D82;
+    transition: all .2s;
+}
+.links a:hover{
+    color: #30A2FF;
+}
+.links li:not(:last-child){
+    margin-bottom: 3rem;
+}
+/* Social Media */
+.social-icons{
+    margin-top: 50vh;
+    display: flex;
+    gap: 4rem;
+    padding: .5rem;
+}
+.social-icons a{
+    font-size: 2rem;
+    color: #30A2FF;
+    transition: all .2s;
+}
+.social-icons a:hover{
+    color: #73BBC9;
+}
+
+/* Media Query */
+@media only screen and (max-width:1000px) {
+    .show-bar{
+        width: 40vw;
+    }
+}
+@media only screen and (max-width: 800px) {
+    html{
+        font-size: 50%;
+    }
+    .show-bar{
+        width: 52vw;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .toggle{
+        display: none;
+    }
+    .close-btn{
+        display: none;
+    }
+    .sidebar, .show-bar{
+        width: 100vw;
+    }
+}
+/* Keyframe */
+@keyframes zoom{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+        color: rgb(38, 150, 150);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
